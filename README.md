@@ -1,36 +1,46 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚗 IMS Calculator Angsuran
 
-## Getting Started
+**Kalkulator Angsuran IMS** adalah aplikasi web modern yang dirancang untuk membantu calon nasabah PT. Inovasi Mitra Sejati (IMS) mensimulasikan perhitungan kredit kendaraan secara transparan dan real-time.
 
-First, run the development server:
+🌍 **Live Demo:** [ims-calculator-angsuran.vercel.app](https://ims-calculator-angsuran.vercel.app/)
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 📝 Brief Proyek
+Aplikasi ini mengimplementasikan logika bisnis finansial yang dinamis berdasarkan tenor (jangka waktu) pinjaman. Dengan antarmuka yang mengutamakan *user experience* dan estetika *premium*, pengguna dapat dengan mudah menyesuaikan harga OTR, Down Payment, dan Tenor untuk melihat estimasi angsuran bulanan secara instan.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Fitur Utama:
+- **Kalkulasi Akurat:** Sesuai dengan spesifikasi teknis dan flowchart bisnis IMS.
+- **Interactive DP Slider:** Fleksibilitas memilih Down Payment (0-100%) dengan interval 20%.
+- **Bunga Dinamis:** Penyesuaian otomatis suku bunga berdasarkan tenor yang dipilih (12%, 14%, atau 16.5%).
+- **UI Premium:** Menggunakan desain *Glassmorphism* dengan dukungan animasi halus.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🛠️ Tech Stack
+- **Framework:** Next.js 15+ (App Router)
+- **Styling:** Tailwind CSS v4 (Glassmorphism & Custom Theme)
+- **Animations:** Framer Motion
+- **Icons:** Lucide React
+- **Language:** TypeScript
 
-To learn more about Next.js, take a look at the following resources:
+---
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 🚀 Cara Menjalankan secara Lokal
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. **Clone project & install dependencies:**
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+2. **Jalankan development server:**
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+3. **Buka browser:**
+   Akses `http://localhost:3000` untuk melihat hasilnya.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+**Dirancang dan dikembangkan oleh Ahmad Reihan Alavi.**
