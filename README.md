@@ -6,6 +6,11 @@
 
 ---
 
+> [!NOTE]
+> Project ini merupakan **Tes Teknis** untuk posisi **IT Support Developer** di **PT. INOVASI MITRA SEJATI**.
+
+---
+
 ## 📝 Brief Proyek
 Aplikasi ini mengimplementasikan logika bisnis finansial yang dinamis berdasarkan tenor (jangka waktu) pinjaman. Dengan antarmuka yang mengutamakan *user experience* dan estetika *premium*, pengguna dapat dengan mudah menyesuaikan harga OTR, Down Payment, dan Tenor untuk melihat estimasi angsuran bulanan secara instan.
 
@@ -14,6 +19,9 @@ Aplikasi ini mengimplementasikan logika bisnis finansial yang dinamis berdasarka
 - **Interactive DP Slider:** Fleksibilitas memilih Down Payment (0-100%) dengan interval 20%.
 - **Bunga Dinamis:** Penyesuaian otomatis suku bunga berdasarkan tenor yang dipilih (12%, 14%, atau 16.5%).
 - **UI Premium:** Menggunakan desain *Glassmorphism* dengan dukungan animasi halus.
+
+### Requirement Flow:
+![IMS Brief Flow](/public/ims_brief.jpeg)
 
 ---
 
