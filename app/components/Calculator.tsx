@@ -22,9 +22,10 @@ const formatIDR = (val: number) => {
 export default function Calculator() {
   const [otr, setOtr] = useState<number>(240000000);
   const [tenor, setTenor] = useState<number>(18);
+  const [dpPercent, setDpPercent] = useState<number>(20);
 
   const stats = useMemo(() => {
-    const dp = 0.2 * otr;
+    const dp = (dpPercent / 100) * otr;
     const principal = otr - dp;
     
     let interestRate = 0;
@@ -40,8 +41,8 @@ export default function Calculator() {
     const totalDept = principal + totalInterest;
     const installment = totalDept / tenor;
 
-    return { dp, principal, interestRate, totalInterest, installment };
-  }, [otr, tenor]);
+    return { dp, principal, interestRate, totalInterest, installment, dpPercent };
+  }, [otr, tenor, dpPercent]);
 
   const handleOtrChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const val = e.target.value.replace(/[^0-9]/g, "");
@@ -104,10 +105,29 @@ export default function Calculator() {
           </div>
         </div>
 
-        <div className="pt-6 border-t border-slate-700/30">
-          <div className="flex items-center justify-between text-slate-400 text-sm">
-            <span>Down Payment (Minimum 20%)</span>
-            <span className="text-slate-200 font-semibold">{formatIDR(stats.dp)}</span>
+        <div className="pt-6 border-t border-slate-700/30 space-y-4">
+          <div className="flex items-center justify-between">
+            <label className="text-slate-400 text-sm font-medium">Down Payment ({stats.dpPercent}%)</label>
+            <span className="text-slate-200 font-bold">{formatIDR(stats.dp)}</span>
+          </div>
+          <div className="space-y-2">
+            <input
+              type="range"
+              min="0"
+              max="100"
+              step="20"
+              value={dpPercent}
+              onChange={(e) => setDpPercent(Number(e.target.value))}
+              className="w-full h-2 bg-slate-800 rounded-lg appearance-none cursor-pointer accent-indigo-500 hover:accent-indigo-400 transition-all [&::-webkit-slider-thumb]:w-6 [&::-webkit-slider-thumb]:h-6 [&::-webkit-slider-thumb]:bg-indigo-500 [&::-webkit-slider-thumb]:rounded-full [&::-webkit-slider-thumb]:border-4 [&::-webkit-slider-thumb]:border-slate-900"
+            />
+            <div className="flex justify-between text-[10px] text-slate-500 font-bold px-1">
+              <span>0%</span>
+              <span>20%</span>
+              <span>40%</span>
+              <span>60%</span>
+              <span>80%</span>
+              <span>100%</span>
+            </div>
           </div>
         </div>
       </motion.div>
@@ -136,7 +156,7 @@ export default function Calculator() {
               <p className="text-slate-100 font-bold tabular-nums">{formatIDR(stats.principal)}</p>
             </div>
             <div className="space-y-1">
-              <span className="text-slate-500 text-xs uppercase font-bold tracking-widest">Total Bunga ({stats.interestRate * 100}%)</span>
+              <span className="text-slate-500 text-xs uppercase font-bold tracking-widest">Total Bunga ({(stats.interestRate * 100).toFixed(1).replace(/\.0$/, "")}%)</span>
               <p className="text-slate-100 font-bold tabular-nums">{formatIDR(stats.totalInterest)}</p>
             </div>
           </div>
